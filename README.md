@@ -14,7 +14,7 @@ ___
 - [ ] 1) [Tree Sort](#Tree)
 - [x] 1) [Comb Sort](#Comb)
 - [x] 1) [Shell Sort](#Shell)
-- [ ] 1) [Bucket Sort](#Bucket)
+- [x] 1) [Bucket Sort](#Bucket)
 - [ ] 1) [Pancake Sort](#Pancake)
 - [ ] 1) [PSRS Sort](#PSRS)
 - [ ] 1) [Patience Sort](#Patience)
