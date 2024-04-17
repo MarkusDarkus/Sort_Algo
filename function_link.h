@@ -1,0 +1,4 @@
+#ifndef FUNCTION_LINK_H
+#define FUNCTION_LINK_H
+
+#endif // FUNCTION_LINK_H

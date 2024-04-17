@@ -7,8 +7,10 @@
 
 void compAndSwap(std::vector<double> &arr, int i, int j, int dir)
 {
-	if (dir==(arr[i]>arr[j]))
-		swap(arr[i],arr[j]);
+    // ЧИНИ КОД БЛЯТЬ
+
+    // if (dir==(arr[i]>arr[j]))
+    // 	swap(arr[i],arr[j]);
 }
 
 

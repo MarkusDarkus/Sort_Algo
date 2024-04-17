@@ -1,8 +1,9 @@
-#include <algorithm>
-#include <iostream>
-#include <type_traits>
-#include <vector>
+#ifndef BUBBLE_H
+#define BUBBLE_H
 
+#include "Bubble.h"
+#include <algorithm>
+#include <vector>
 
 void bubbleSort(std::vector<int> &arr)
 {
@@ -15,3 +16,5 @@ void bubbleSort(std::vector<int> &arr)
         }
     }
 }
+
+#endif
