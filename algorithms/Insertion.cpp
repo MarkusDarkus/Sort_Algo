@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void insertionSort(std::vector<double> &arr)
+void insertionSort(std::vector<int> &arr)
 {
     if (arr.empty()) {
         return;

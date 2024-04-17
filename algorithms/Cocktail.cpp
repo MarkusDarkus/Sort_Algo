@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void cocktailSort(std::vector<double> &arr)
+void cocktailSort(std::vector<int> &arr)
 {
     int n = arr.size();
     bool swapped = true;

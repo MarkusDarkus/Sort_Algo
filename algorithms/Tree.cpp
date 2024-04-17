@@ -20,7 +20,7 @@ struct Node *newNode(int item)
 } 
 
  
-void storeSorted(Node *root, std::vector<double>& arr, int &i) 
+void storeSorted(Node *root, std::vector<int>& arr, int &i) 
 { 
 	if (root != NULL) 
 	{ 
@@ -42,7 +42,7 @@ Node* insert(Node* node, int key)
 } 
 
 
-void treeSort(std::vector<double>& arr, int n) 
+void treeSort(std::vector<int>& arr, int n) 
 { 
 	struct Node *root = NULL; 
 	root = insert(root, arr[0]); 

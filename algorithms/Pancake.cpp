@@ -6,7 +6,7 @@
 
 
 
-void flip(std::vector<double> &arr, int i) 
+void flip(std::vector<int> &arr, int i) 
 { 
 	int temp, start = 0; 
 	while (start < i) 
@@ -20,7 +20,7 @@ void flip(std::vector<double> &arr, int i)
 } 
 
 
-int findMax(std::vector<double> &arr, int n) 
+int findMax(std::vector<int> &arr, int n) 
 { 
     int mi, i; 
     for (mi = 0, i = 0; i < n; ++i) 
@@ -30,7 +30,7 @@ int findMax(std::vector<double> &arr, int n)
 }
 
 
-void pancakeSort(std::vector<double> &arr, int n) 
+void pancakeSort(std::vector<int> &arr, int n) 
 {
 	for (int curr_size = n; curr_size > 1; 
 							--curr_size) 

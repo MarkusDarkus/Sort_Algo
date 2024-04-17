@@ -11,7 +11,7 @@ void swap(double& a, double& b) {
 }  
 
 
-void combSort(std::vector<double>& arr) {
+void combSort(std::vector<int>& arr) {
     int n = arr.size();
     int gap = n;
     float shrink = 1.3;
@@ -24,7 +24,7 @@ void combSort(std::vector<double>& arr) {
         swapped = false; 
         for (int i = 0; i < n - gap; i++) {
             if (arr[i] > arr[i + gap]) {
-                swap(arr[i], arr[i + gap]);
+                std::swap(arr[i], arr[i + gap]);
                 swapped = true;
             }
         }

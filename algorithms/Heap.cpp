@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void heapify(std::vector<double> &arr, int n, int i)
+void heapify(std::vector<int> &arr, int n, int i)
 {
     int largest = i;
     int left = 2 * i + 1;
@@ -20,7 +20,7 @@ void heapify(std::vector<double> &arr, int n, int i)
         heapify(arr, n, largest);
     }
 }
-void heapSort(std::vector<double> &arr)
+void heapSort(std::vector<int> &arr)
 {
     int n = arr.size();
     for (int i = n / 2 - 1; i >= 0; i--) {

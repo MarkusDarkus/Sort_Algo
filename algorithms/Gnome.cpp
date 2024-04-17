@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void gnomeSort(std::vector<double> &arr)
+void gnomeSort(std::vector<int> &arr)
 {
     int n = arr.size();
     int index = 0;

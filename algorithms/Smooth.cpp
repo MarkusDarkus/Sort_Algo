@@ -13,7 +13,7 @@ int leonardo(int k)
 }
 
 
-void heapify(std::vector<double>& arr, int start, int end)
+void heapify(std::vector<int>& arr, int start, int end)
 {
 	int i = start;
 	int j = 0;
@@ -48,7 +48,7 @@ void heapify(std::vector<double>& arr, int start, int end)
 }
 
 // Smooth Sort function
-std::vector<double> smooth_sort(std::vector<double>& arr)
+std::vector<int> smooth_sort(std::vector<int>& arr)
 {
 	int n = arr.size();
 

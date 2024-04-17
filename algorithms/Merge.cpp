@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void merge(std::vector<double> &arr, int left, int middle, int right)
+void merge(std::vector<int> &arr, int left, int middle, int right)
 {
     int n1 = middle - left + 1;
     int n2 = right - middle;
@@ -37,7 +37,7 @@ void merge(std::vector<double> &arr, int left, int middle, int right)
         k++;
     }
 }
-void mergeSort(std::vector<double> &arr, int left, int right)
+void mergeSort(std::vector<int> &arr, int left, int right)
 {
     if (left < right) {
         int middle = left + (right - left) / 2;
