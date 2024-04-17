@@ -8,6 +8,7 @@
 
 #include "algorithms/Stalin.h"
 #include <functional>
+#include <chrono>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -100,29 +101,39 @@ void MainWindow::on_SelectBtn_clicked()
 
 void MainWindow::on_BeginBtn_clicked()
 {
-    int arr_size = ui->AmountSpin->value();
+    int max_arr_size = ui->AmountSpin->value();
     int step = ui->StepSpin->value(); // FIXME: step > amount
 
     ui->BeginBtn->setEnabled(false);
     ui->CancelBtn->setEnabled(true);
 
-    std::vector<double> initial_arr, sorted_arr;
-    initial_arr.reserve(arr_size);
-    for (int i = 0; i < arr_size; i++)
-        initial_arr[i] = rand() % arr_size;
-
-    sorted_arr = initial_arr;  // TODO: remove sort check in future...
-    std::sort(sorted_arr.begin(), sorted_arr.end());
+    std::vector<double> initial_arr;
 
     for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
         if (!button_activation_info[get_str_from_table(i, 0)]) { continue; }
         // too lazy to use threads...
 
-        for (auto final_size=step; final_size <= arr_size; step *= i) {
+        QLineSeries *series = new QLineSeries();
 
-            series->append(step, time);
+        std::function<void(std::vector<double>)> sort_func;
+
+        for (size_t final_size=step, iteration=1; final_size <= max_arr_size; ++iteration, final_size = step * iteration) {
+            initial_arr.reserve(final_size);
+            for (int x = 0; x < final_size; x++){
+                initial_arr[x] = rand() % final_size;
+            }
+
+            auto start = std::chrono::high_resolution_clock::now();
+
+
+
+            auto stop = std::chrono::high_resolution_clock::now();
+            auto duration = duration_cast<std::chrono::microseconds>(stop - start);
+            series->append(step, duration.count());
+            initial_arr.clear();
         }
-
+        chart->addSeries(series);
+        series->setUseOpenGL(true);
     }
 
 
