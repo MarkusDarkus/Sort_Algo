@@ -3,7 +3,7 @@
 Hello Mr Bogdan. We want to represent to you our great work in algorithm science!!!
 ___
 # Содержание
-1) [Insertion Sort](#Insertion) - []
+- [x] 1) [Insertion Sort](#Insertion) 
 1) [Selection Sort](#Selection)
 1) [Bubble Sort](#Bubble)
 1) [Gnome Sort](#Gnome)
