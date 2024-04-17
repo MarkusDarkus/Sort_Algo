@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //--------------
     std::map<std::string, bool> button_activation_info{};
+    std::cout << button_activation_info["foo"];
 }
 
 MainWindow::~MainWindow()
