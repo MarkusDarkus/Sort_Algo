@@ -12,6 +12,7 @@ ___
 1) [Quick Sort](#Quick)
 1) [Merge Sort](#Merge)
 1) [Tree Sort](#Tree)
+1) [Counting Sort](#Counting)
 1) [Comb Sort](#Comb)
 1) [Shell Sort](#Shell)
 1) [Bucket Sort](#Bucket)

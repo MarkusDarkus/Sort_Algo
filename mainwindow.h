@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtCharts>
+#include <QChartView>
+#include <QLineSeries>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,5 +25,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void calculate();
+
 };
 #endif // MAINWINDOW_H
