@@ -254,7 +254,9 @@ void countingSort(std::vector<T>& array) {
 
 
 int main() {
- std::vector<int> arr = {9, 2, 7, 5, 1, 6, 8, 3, 4};  insertionSort(arr);  for (const auto& num : arr) {
- std::cout << num << " ";
- }  return (0);
+ std::vector<int> arr = {9, 2, 7, 5, 1, 6, 8, 3, 4};
+ insertionSort(&arr) {
+    std::cout << num << " ";
+ }  
+ return 0;
 }
