@@ -1,8 +1,5 @@
+#include "Heap.h"
 #include <algorithm>
-#include <iostream>
-#include <type_traits>
-#include <vector>
-
 
 void heapify(std::vector<double> &arr, int n, int i)
 {

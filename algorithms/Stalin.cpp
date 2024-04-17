@@ -1,4 +1,4 @@
-#include <algorithm>
-#include <iostream>
-#include <type_traits>
-#include <vector>
+#include "Stalin.h"
+
+
+bool yes() {return true;}

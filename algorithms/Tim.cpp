@@ -17,11 +17,10 @@ void insertionSort(std::vector<double>& arr, int left, int right)
 		} 
 		arr[j + 1] = temp; 
 	} 
-} 
+}
 
 
-void merge(std::vector<double>& arr, int l, int m, int r) 
-{ 
+void merge(std::vector<double>& arr, int l, int m, int r) {
 	int len1 = m - l + 1, len2 = r - m; 
 	int left[len1], right[len2]; 
 	for (int i = 0; i < len1; i++) 

@@ -15,38 +15,70 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
-        algorithms.cpp
+        #algorithms.cpp
         mainwindow.h
         mainwindow.ui
+)
+
+set(ALGO_SOURCES
+    # algorithms/Insertion.cpp
+    # algorithms/Selection.cpp
+    algorithms/Gnome.cpp
+    # algorithms/Cocktail.cpp
+    algorithms/Heap.cpp
+    # algorithms/Quick.cpp
+    # algorithms/Merge.cpp
+    # algorithms/Tree.cpp
+    # algorithms/Comb.cpp
+    # algorithms/Shell.cpp
+    # algorithms/Bucket.cpp
+    # algorithms/Pancake.cpp
+    algorithms/Bubble.cpp
+    # algorithms/PSRS.cpp # TODO: implement me
+    # algorithms/Patience.cpp
+    # algorithms/Smooth.cpp
+    # algorithms/Tim.cpp
+    # algorithms/Radix.cpp
+    # algorithms/Sleep.cpp # TODO: implement me
+    algorithms/Stalin.cpp # TODO: implement me
+    # algorithms/Bitonic.cpp
+)
+
+set(ALGO_HEADERS
+    # algorithms/Insertion.h
+    # algorithms/Selection.h
+    algorithms/Gnome.h
+    # algorithms/Cocktail.h
+    algorithms/Heap.h
+    # algorithms/Quick.h
+    # algorithms/Merge.h
+    # algorithms/Tree.h
+    # algorithms/Comb.h
+    # algorithms/Shell.h
+    # algorithms/Bucket.h
+    # algorithms/Pancake.h
+    algorithms/Bubble.h
+    # algorithms/PSRS.h # TODO: implement me
+    # algorithms/Patience.h
+    # algorithms/Smooth.h
+    # algorithms/Tim.h
+    # algorithms/Radix.h
+    # algorithms/Sleep.h # TODO: implement me
+    algorithms/Stalin.h # TODO: implement me
+    # algorithms/Bitonic.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(algosi
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        algorithms.cpp README.md
-        .gitignore algorithms.cpp CMakeLists.txt main.cpp mainwindow.cpp mainwindow.h mainwindow.ui README.md sad.png
-        algorithms/Insertion.cpp
-        algorithms/Selection.cpp
-        algorithms/Bubble.cpp
-        algorithms/Gnome.cpp
-        algorithms/Cocktail.cpp
-        algorithms/Heap.cpp
-        algorithms/Quick.cpp
-        algorithms/Merge.cpp
-        algorithms/Tree.cpp
-        algorithms/Comb.cpp
-        algorithms/Shell.cpp
-        algorithms/Bucket.cpp
-        algorithms/Pancake.cpp
-        algorithms/PSRS.cpp
-        algorithms/Patience.cpp
-        algorithms/Smooth.cpp
-        algorithms/Tim.cpp
-        algorithms/Radix.cpp
-        algorithms/Sleep.cpp
-        algorithms/Stalin.cpp
-        algorithms/Bitonic.cpp
+        ${ALGO_SOURCES}
+        ${ALGO_HEADERS}
+        .gitignore
+        CMakeLists.txt
+        README.md
+        sad.png
+        function_link.h
     )
 
 find_package(Qt6 REQUIRED COMPONENTS Charts)
