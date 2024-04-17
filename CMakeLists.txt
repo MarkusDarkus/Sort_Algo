@@ -78,6 +78,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         CMakeLists.txt
         README.md
         sad.png
+
         function_link.h
     )
 
