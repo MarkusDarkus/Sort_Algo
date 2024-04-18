@@ -10,6 +10,6 @@
 void compAndSwap(std::vector<int> &arr, int i, int j, int dir);
 void bitonicMerge(std::vector<int> &arr, int low, int cnt, int dir);
 void bitonicSort(std::vector<int> &arr,int low, int cnt, int dir);
-void sort_bitonic_(std::vector<int> &arr, int N, int up);
+void sort_bitonic_(std::vector<int> &arr);
 
 #endif // BITONIC_H

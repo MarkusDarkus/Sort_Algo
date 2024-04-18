@@ -8,7 +8,7 @@
 const int RUN = 32; 
 
 void insertionSort(std::vector<int>& arr, int left, int right) 
-{ 
+{
 	for (int i = left + 1; i <= right; i++) { 
 		int temp = arr[i]; 
 		int j = i - 1; 
@@ -59,8 +59,9 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 } 
 
 
-void timSort(std::vector<int>& arr, int n) 
+void timSort(std::vector<int>& arr) 
 { 
+    int n = arr.size();
 	for (int i = 0; i < n; i += RUN) 
 		insertionSort(arr, i, std::min((i + RUN - 1), (n - 1))); 
 	for (int size = RUN; size < n; size = 2 * size) { 

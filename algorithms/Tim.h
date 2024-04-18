@@ -8,6 +8,6 @@
 
 void insertionSort(std::vector<int>& arr, int left, int right);
 void merge(std::vector<int>& arr, int l, int m, int r);
-void timSort(std::vector<int>& arr, int n);
+void timSort(std::vector<int>& arr);
 
 #endif // TIM_H

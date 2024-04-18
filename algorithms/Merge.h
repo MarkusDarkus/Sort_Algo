@@ -6,6 +6,6 @@
 
 
 void merge(std::vector<int> &arr, int left, int middle, int right);
-void mergeSort(std::vector<int> &arr, int left, int right);
+void mergeSort(std::vector<int> &arr);
 
 #endif // MERGE_H

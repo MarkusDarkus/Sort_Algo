@@ -4,6 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-void shellSort(std::vector<int>& arr, int n);
+void shellSort(std::vector<int>& arr);
 
 #endif // SHELL_H

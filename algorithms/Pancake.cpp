@@ -31,8 +31,9 @@ int findMax(std::vector<int> &arr, int n)
 }
 
 
-void pancakeSort(std::vector<int> &arr, int n) 
+void pancakeSort(std::vector<int> &arr) 
 {
+    int n = arr.size();
 	for (int curr_size = n; curr_size > 1; 
 							--curr_size) 
 	{

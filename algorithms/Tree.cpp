@@ -43,8 +43,9 @@ Node* insert(Node* node, int key)
 } 
 
 
-void treeSort(std::vector<int>& arr, int n) 
-{ 
+void treeSort(std::vector<int>& arr) 
+{
+    int n = arr.size();
 	struct Node *root = NULL; 
 	root = insert(root, arr[0]); 
 	for (int i=1; i<n; i++) 
