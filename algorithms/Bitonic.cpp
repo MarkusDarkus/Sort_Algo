@@ -1,3 +1,4 @@
+#include "Bitonic.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
@@ -5,16 +6,14 @@
 #include<bits/stdc++.h>
 
 
-void compAndSwap(std::vector<double> &arr, int i, int j, int dir)
+void compAndSwap(std::vector<int> &arr, int i, int j, int dir)
 {
-    // ЧИНИ КОД БЛЯТЬ
-
-    // if (dir==(arr[i]>arr[j]))
-    // 	swap(arr[i],arr[j]);
+    if (dir==(arr[i]>arr[j]))
+        std::swap(arr[i],arr[j]);
 }
 
 
-void bitonicMerge(std::vector<double> &arr, int low, int cnt, int dir)
+void bitonicMerge(std::vector<int> &arr, int low, int cnt, int dir)
 {
 	if (cnt>1)
 	{
@@ -27,7 +26,7 @@ void bitonicMerge(std::vector<double> &arr, int low, int cnt, int dir)
 }
 
 
-void bitonicSort(std::vector<double> &arr,int low, int cnt, int dir)
+void bitonicSort(std::vector<int> &arr,int low, int cnt, int dir)
 {
 	if (cnt>1)
 	{
@@ -39,7 +38,7 @@ void bitonicSort(std::vector<double> &arr,int low, int cnt, int dir)
 }
 
 
-void sort(std::vector<double> &arr, int N, int up)
+void sort(std::vector<int> &arr, int N, int up)
 {
 	bitonicSort(arr,0, N, up);
 }
