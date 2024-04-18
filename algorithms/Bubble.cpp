@@ -1,8 +1,8 @@
 #include "Bubble.h"
 #include <algorithm>
 #include <vector>
-#include <iostream>
-void bubbleSort(std::vector<int> &arr)
+
+void bubbleSort(std::vector<double> &arr)
 {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {

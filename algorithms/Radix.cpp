@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <vector>
 
-int getMax(std::vector<double>& arr, int n)
+int getMax(std::vector<int>& arr, int n)
 {
 	int mx = arr[0];
 	for (int i = 1; i < n; i++)
@@ -13,7 +13,7 @@ int getMax(std::vector<double>& arr, int n)
 }
 
 
-void countSort(std::vector<double>& arr, int n, int exp)
+void countSort(std::vector<int>& arr, int n, int exp)
 {
     // int output[n];
     // int i, count[10] = { 0 };
@@ -33,7 +33,7 @@ void countSort(std::vector<double>& arr, int n, int exp)
 }
 
 
-void radixsort(std::vector<double>& arr, int n)
+void radixsort(std::vector<int>& arr, int n)
 {
     // int m = getMax(arr, n);
     // for (int exp = 1; m / exp > 0; exp *= 10)

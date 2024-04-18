@@ -1,0 +1,8 @@
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/algosi.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/edit_cache.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/rebuild_cache.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/list_install_components.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/install.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/install/local.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/install/strip.dir
+C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/CMakeFiles/algosi_autogen.dir

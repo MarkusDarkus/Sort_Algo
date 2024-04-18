@@ -1,3 +1,4 @@
+#include "Tim.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
@@ -6,7 +7,7 @@
 
 const int RUN = 32; 
 
-void insertionSort(std::vector<double>& arr, int left, int right) 
+void insertionSort(std::vector<int>& arr, int left, int right) 
 { 
 	for (int i = left + 1; i <= right; i++) { 
 		int temp = arr[i]; 
@@ -20,7 +21,7 @@ void insertionSort(std::vector<double>& arr, int left, int right)
 }
 
 
-void merge(std::vector<double>& arr, int l, int m, int r) {
+void merge(std::vector<int>& arr, int l, int m, int r) {
 	int len1 = m - l + 1, len2 = r - m; 
 	int left[len1], right[len2]; 
 	for (int i = 0; i < len1; i++) 
@@ -58,7 +59,7 @@ void merge(std::vector<double>& arr, int l, int m, int r) {
 } 
 
 
-void timSort(std::vector<double>& arr, int n) 
+void timSort(std::vector<int>& arr, int n) 
 { 
 	for (int i = 0; i < n; i += RUN) 
 		insertionSort(arr, i, std::min((i + RUN - 1), (n - 1))); 

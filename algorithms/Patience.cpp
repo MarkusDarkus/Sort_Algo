@@ -1,3 +1,4 @@
+#include "Patience.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
@@ -5,9 +6,9 @@
 #include <bits/stdc++.h>
 
 
-std::vector<double> merge_piles(std::vector<std::vector<double> >& v)
+std::vector<int> merge_piles(std::vector<std::vector<int> >& v)
 {
-	std::vector<double> ans;
+	std::vector<int> ans;
 	while (1) {
 		int minu = INT_MAX;
 		int index = -1;
@@ -29,12 +30,12 @@ std::vector<double> merge_piles(std::vector<std::vector<double> >& v)
 }
 
 
-std::vector<double> patienceSorting(std::vector<double>& arr)
+std::vector<int> patienceSorting(std::vector<int>& arr)
 {
-	std::vector<std::vector<double>> piles;
+	std::vector<std::vector<int>> piles;
 	for (int i = 0; i < arr.size(); i++) {
 		if (piles.empty()) {
-			std::vector<double> temp;
+			std::vector<int> temp;
 			temp.push_back(arr[i]);
 			piles.push_back(temp);
 		}
@@ -48,13 +49,13 @@ std::vector<double> patienceSorting(std::vector<double>& arr)
 				}
 			}
 			if (flag) {
-				std::vector<double> temp;
+				std::vector<int> temp;
 				temp.push_back(arr[i]);
 				piles.push_back(temp);
 			}
 		}
 	}
-	std::vector<double> ans;
+	std::vector<int> ans;
 	ans = merge_piles(piles);
 	return ans;
 }

@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/build",
+  "command": "C:\\Users\\marks\\Pictures\\MinGW\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/algosi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\algosi.dir\\algosi_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\marks\\Desktop\\algo_hw\\Sort_Algo\\build\\algosi_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/build/algosi_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/algosi.dir/algosi_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/build",
+  "command": "C:\\Users\\marks\\Pictures\\MinGW\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/algosi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\algosi.dir\\main.cpp.obj -c C:\\Users\\marks\\Desktop\\algo_hw\\Sort_Algo\\main.cpp",
+  "file": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/main.cpp",
+  "output": "CMakeFiles/algosi.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/build",
+  "command": "C:\\Users\\marks\\Pictures\\MinGW\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/algosi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\algosi.dir\\mainwindow.cpp.obj -c C:\\Users\\marks\\Desktop\\algo_hw\\Sort_Algo\\mainwindow.cpp",
+  "file": "C:/Users/marks/Desktop/algo_hw/Sort_Algo/mainwindow.cpp",
+  "output": "CMakeFiles/algosi.dir/mainwindow.cpp.obj"
+}
+]

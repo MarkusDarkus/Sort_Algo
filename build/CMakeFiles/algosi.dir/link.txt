@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\algosi.dir/objects.a
+C:\Users\marks\Pictures\MinGW\bin\ar.exe qc CMakeFiles\algosi.dir/objects.a @CMakeFiles\algosi.dir\objects1.rsp
+C:\Users\marks\Pictures\MinGW\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\algosi.dir/objects.a -Wl,--no-whole-archive -o algosi.exe -Wl,--out-implib,libalgosi.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\algosi.dir\linkLibs.rsp

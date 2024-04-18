@@ -4,7 +4,7 @@
 #include <vector>
 
 
-void selectionSort(std::vector<double> &arr)
+void selectionSort(std::vector<int> &arr)
 {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {

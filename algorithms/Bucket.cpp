@@ -1,10 +1,13 @@
-#include <iostream>
+#ifndef BUBBLE_H
+#define BUBBLE_H
+
+#include "Bucket.h"
 #include <vector>
 #include <algorithm>
 #include <cmath>  
 
 
-void insertionSort(std::vector<double>& bucket) {
+void insertionSort(std::vector<int>& bucket) {
     for (int i = 1; i < bucket.size(); ++i) {
         int key = bucket[i];
         int j = i - 1;
@@ -17,9 +20,9 @@ void insertionSort(std::vector<double>& bucket) {
 }
 
 
-void bucketSort(std::vector<double>& arr) {
+void bucketSort(std::vector<int>& arr) {
     int n = arr.size();  
-    std::vector<std::vector<double>> buckets(n);  
+    std::vector<std::vector<int>> buckets(n);  
     for (int i = 0; i < n; ++i) {
         int bucketIndex = n * arr[i];
         buckets[bucketIndex].push_back(arr[i]);
@@ -34,3 +37,5 @@ void bucketSort(std::vector<double>& arr) {
         }
     }
 }
+
+#endif

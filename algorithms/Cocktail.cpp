@@ -1,10 +1,13 @@
+#ifndef COCK_H
+#define COCK_H
+
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
 #include <vector>
 
 
-void cocktailSort(std::vector<double> &arr)
+void cocktailSort(std::vector<int> &arr)
 {
     int n = arr.size();
     bool swapped = true;
@@ -30,3 +33,5 @@ void cocktailSort(std::vector<double> &arr)
         start++;
     }
 }
+
+#endif

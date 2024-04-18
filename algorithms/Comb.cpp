@@ -1,17 +1,21 @@
+#ifndef COMB_H
+#define COMB_H
+
+#include "Comb.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
 #include <vector>
 
 
-void swap(double& a, double& b) {
+void swap(int& a, int& b) {
     double temp = a;
     a = b;
     b = temp;
 }  
 
 
-void combSort(std::vector<double>& arr) {
+void combSort(std::vector<int>& arr) {
     int n = arr.size();
     int gap = n;
     float shrink = 1.3;
@@ -24,9 +28,11 @@ void combSort(std::vector<double>& arr) {
         swapped = false; 
         for (int i = 0; i < n - gap; i++) {
             if (arr[i] > arr[i + gap]) {
-                swap(arr[i], arr[i + gap]);
+                std::swap(arr[i], arr[i + gap]);
                 swapped = true;
             }
         }
     }
 }
+
+#endif
