@@ -4,11 +4,8 @@
 #include <map>
 #include <cstdlib>
 #include <vector>
-#include <algorithm>
-
-#include "algorithms/Stalin.h"
-#include <functional>
 #include <chrono>
+#include "function_link.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -101,21 +98,22 @@ void MainWindow::on_SelectBtn_clicked()
 
 void MainWindow::on_BeginBtn_clicked()
 {
+    chart->removeAllSeries();
     int max_arr_size = ui->AmountSpin->value();
     int step = ui->StepSpin->value(); // FIXME: step > amount
 
     ui->BeginBtn->setEnabled(false);
     ui->CancelBtn->setEnabled(true);
 
-    std::vector<double> initial_arr;
+    std::vector<int> initial_arr;
 
     for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
         if (!button_activation_info[get_str_from_table(i, 0)]) { continue; }
         // too lazy to use threads...
 
         QLineSeries *series = new QLineSeries();
-
-        std::function<void(std::vector<double>)> sort_func;
+        series->setName(QString(get_str_from_table(i, 0).c_str()));
+        std::function<void(std::vector<int>)> sort_func;
 
         for (size_t final_size=step, iteration=1; final_size <= max_arr_size; ++iteration, final_size = step * iteration) {
             initial_arr.reserve(final_size);
@@ -125,19 +123,34 @@ void MainWindow::on_BeginBtn_clicked()
 
             auto start = std::chrono::high_resolution_clock::now();
 
-
+            function_link(initial_arr, get_str_from_table(i, 0));
 
             auto stop = std::chrono::high_resolution_clock::now();
-            auto duration = duration_cast<std::chrono::microseconds>(stop - start);
-            series->append(step, duration.count());
+            auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+            series->append(step, duration.count() / 1000);
+            std::cout << "\t" << step << " " << duration.count() << std::endl;
             initial_arr.clear();
         }
+        std::cout <<  get_str_from_table(i, 0) << " done!" << std::endl;
         chart->addSeries(series);
         series->setUseOpenGL(true);
     }
 
 
+    // QLineSeries *series = new QLineSeries();
+    // series->setName("bebra");
+    // series->append(0, 6);
+    // series->append(2, 4);
+    // series->append(3, 8);
+    // series->append(7, 4);
+    // series->append(10, 5);
+    // *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
+    //         << QPointF(20, 2);
+    // //chart->legend()->hide();
+    // chart->addSeries(series);
+    // series->setUseOpenGL(true);
 
+    chart->zoomOut();
     ui->BeginBtn->setEnabled(true);
     ui->CancelBtn->setEnabled(false);
 }

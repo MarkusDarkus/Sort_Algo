@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void gnomeSort(std::vector<double> &arr);
+void gnomeSort(std::vector<int> &arr);
 
 #endif // GNOME_H

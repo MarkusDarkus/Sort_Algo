@@ -80,6 +80,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         sad.png
 
         function_link.h
+        function_link.cpp
     )
 
 find_package(Qt6 REQUIRED COMPONENTS Charts)

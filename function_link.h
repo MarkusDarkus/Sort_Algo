@@ -1,9 +1,9 @@
 #ifndef FUNCTION_LINK_H
 #define FUNCTION_LINK_H
 
-#include <map>
 #include <string>
-#include <functional>
+#include <vector>
 
+void function_link(std::vector<int> &data, const std::string &name);
 
 #endif // FUNCTION_LINK_H

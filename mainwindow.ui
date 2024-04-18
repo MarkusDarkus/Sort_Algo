@@ -88,12 +88,12 @@
     </item>
     <item row="2" column="0">
      <property name="text">
-      <string>Bubble !!!!!!!</string>
+      <string>Bubble</string>
      </property>
     </item>
     <item row="3" column="0">
      <property name="text">
-      <string>Gnome !!!!!!!</string>
+      <string>Gnome</string>
      </property>
     </item>
     <item row="4" column="0">
@@ -103,7 +103,7 @@
     </item>
     <item row="5" column="0">
      <property name="text">
-      <string>Heap !!!!!!!</string>
+      <string>Heap</string>
      </property>
     </item>
     <item row="6" column="0">
