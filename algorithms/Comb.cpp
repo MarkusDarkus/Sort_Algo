@@ -1,10 +1,14 @@
+#ifndef COMB_H
+#define COMB_H
+
+#include "Comb.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
 #include <vector>
 
 
-void swap(double& a, double& b) {
+void swap(int& a, int& b) {
     double temp = a;
     a = b;
     b = temp;
@@ -30,3 +34,5 @@ void combSort(std::vector<int>& arr) {
         }
     }
 }
+
+#endif

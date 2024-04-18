@@ -1,3 +1,6 @@
+#ifndef COCK_H
+#define COCK_H
+
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
@@ -30,3 +33,5 @@ void cocktailSort(std::vector<int> &arr)
         start++;
     }
 }
+
+#endif

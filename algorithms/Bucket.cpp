@@ -1,4 +1,7 @@
-#include <iostream>
+#ifndef BUBBLE_H
+#define BUBBLE_H
+
+#include "Bucket.h"
 #include <vector>
 #include <algorithm>
 #include <cmath>  
@@ -34,3 +37,5 @@ void bucketSort(std::vector<int>& arr) {
         }
     }
 }
+
+#endif

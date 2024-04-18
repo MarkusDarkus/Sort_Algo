@@ -4,6 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-void bubbleSort(std::vector<double> &arr);
+void bubbleSort(std::vector<int> &arr);
 
 #endif // BUBBLE_H

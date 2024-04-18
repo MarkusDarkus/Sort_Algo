@@ -1,3 +1,4 @@
+#include "Patience.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>

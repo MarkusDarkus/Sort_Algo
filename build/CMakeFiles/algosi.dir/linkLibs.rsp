@@ -1,0 +1,1 @@
+ C:/Users/marks/anaconda3/Library/lib/Qt5Widgets.lib C:/Users/marks/anaconda3/Library/lib/Qt5Gui.lib C:/Users/marks/anaconda3/Library/lib/Qt5Core.lib C:/Users/marks/anaconda3/Library/lib/qtmain.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

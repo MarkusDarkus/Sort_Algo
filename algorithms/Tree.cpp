@@ -1,3 +1,4 @@
+#include "Tree.h"
 #include <algorithm>
 #include <iostream>
 #include <type_traits>
