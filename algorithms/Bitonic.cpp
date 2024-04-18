@@ -38,7 +38,7 @@ void bitonicSort(std::vector<int> &arr,int low, int cnt, int dir)
 }
 
 
-void sort(std::vector<int> &arr, int N, int up)
+void sort_bitonic_(std::vector<int> &arr, int N, int up)
 {
 	bitonicSort(arr,0, N, up);
 }
