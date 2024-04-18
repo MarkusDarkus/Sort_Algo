@@ -43,6 +43,8 @@ private:
 
     QChart *chart = new QChart();
     QChartView *chartView = new QChartView(chart);
+    QValueAxis *axisX = new QValueAxis();
+    QValueAxis *axisY = new QValueAxis();
 
     std::map<std::string, bool> button_activation_info;
     int disabled_count = 0;

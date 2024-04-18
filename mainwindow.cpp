@@ -46,6 +46,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     chart->removeAllSeries(); // deletes pointers+objects too
 
+    axisX->setRange(0, 1000);
+    axisY->setRange(0, 1000);
+
+    chart->setAxisX(axisX);
+    chart->setAxisY(axisY);
+
+
     //-------------- init data map
     for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
         auto item_txt = get_str_from_table(i, 0);
@@ -101,11 +108,13 @@ void MainWindow::on_BeginBtn_clicked()
     chart->removeAllSeries();
     int max_arr_size = ui->AmountSpin->value();
     int step = ui->StepSpin->value(); // FIXME: step > amount
+    std::vector<int> initial_arr;
 
     ui->BeginBtn->setEnabled(false);
     ui->CancelBtn->setEnabled(true);
 
-    std::vector<int> initial_arr;
+    int max_x_val = -1, max_y_val = -1, min_y_val=-1;
+
 
     for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
         if (!button_activation_info[get_str_from_table(i, 0)]) { continue; }
@@ -127,12 +136,33 @@ void MainWindow::on_BeginBtn_clicked()
 
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
-            series->append(step, duration.count() / 1000);
-            std::cout << "\t" << step << " " << duration.count() << std::endl;
+            series->append(final_size, duration.count());
+
+            max_x_val = final_size > max_x_val ? final_size : max_x_val;
+            max_y_val = duration.count() > max_y_val ? duration.count() : max_y_val;
+            if (min_y_val == -1) {min_y_val = duration.count();}
+            else {min_y_val = duration.count() < min_y_val ? duration.count() : min_y_val;}
+
+            std::cout << "\t" << final_size << " " << duration.count() << std::endl;
             initial_arr.clear();
         }
-        std::cout <<  get_str_from_table(i, 0) << " done!" << std::endl;
         chart->addSeries(series);
+
+        axisX->setRange(0, max_x_val);
+        axisY->setRange(0, max_y_val);
+
+        axisX->setMin(0);
+        axisX->setMax(max_x_val);
+        //axisX->setTickCount(100);
+
+        axisY->setMin(min_y_val);
+        axisY->setMax(max_y_val);
+        //axisY->setTickCount(100);
+
+        series->attachAxis(axisX);
+        series->attachAxis(axisY);
+
+        std::cout <<  get_str_from_table(i, 0) << " done!" << std::endl;
         series->setUseOpenGL(true);
     }
 
@@ -150,7 +180,7 @@ void MainWindow::on_BeginBtn_clicked()
     // chart->addSeries(series);
     // series->setUseOpenGL(true);
 
-    chart->zoomOut();
+    //chart->zoomOut();
     ui->BeginBtn->setEnabled(true);
     ui->CancelBtn->setEnabled(false);
 }
