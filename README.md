@@ -16,13 +16,13 @@ ___
 - [x] 11) [Shell Sort](#Shell)
 - [x] 12) [Bucket Sort](#Bucket)
 - [x] 13) [Pancake Sort](#Pancake)
-- [ ] 14) [PSRS Sort](#PSRS)
+- [x] 14) [PSRS Sort](#PSRS)
 - [x] 15) [Patience Sort](#Patience)
 - [x] 16) [Smooth Sort](#Smooth)
 - [x] 17) [Tim Sort](#Tim)
 - [x] 18) [Radix Sort](#Radix)
-- [ ] 19) [Sleep Sort](#Sleep)
-- [ ] 20) [Stalin Sort](#Stalin)
+- [x] 19) [Sleep Sort](#Sleep)
+- [x] 20) [Stalin Sort](#Stalin)
 - [x] 21) [Bitonic Sort](#Bitonic)
 
 ---
@@ -30,9 +30,9 @@ ___
 \
 \
 
-# radix.cpp и bitonic.cpp почини бля<------------------------------------------
-# cmake юзай, огузок, линковщик тебя обосрал уже
-# в radix.cpp не понятно, это LSD или MSD, лучше обе реализуй
+# mr Bogdan give otl 10 to us
+#
+#
 \
 \
 \
