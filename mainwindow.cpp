@@ -149,10 +149,7 @@ void MainWindow::on_BeginBtn_clicked()
 
             auto start = std::chrono::high_resolution_clock::now();
 
-            int response = function_link(initial_arr, get_str_from_table(i, 0));
-            if (response == -1) {
-                break;  // func isn't implemented yet
-            }
+            function_link(initial_arr, get_str_from_table(i, 0));
 
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
@@ -174,7 +171,7 @@ void MainWindow::on_BeginBtn_clicked()
         // for (int x_point = 0; x_point <= max_arr_size * const_; ++x_point) {
         //     series->append(x_point / const_, spl(x_point / const_));
         // }
-
+        series->setColor(QColor(colors_list[i].c_str()));
         chart->addSeries(series);
 
         axisX->setRange(0, max_x_val);

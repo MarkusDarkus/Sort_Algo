@@ -1,12 +1,9 @@
 #ifndef STALIN_H
 #define STALIN_H
 
-#include <algorithm>
-#include <iostream>
-#include <type_traits>
 #include <vector>
 
-bool yes();
 
+void stalinSort(std::vector<int> &data);
 
 #endif // STALIN_H

@@ -15,9 +15,17 @@
 #include "algorithms/Pancake.h"
 #include "algorithms/Patience.h"
 #include "algorithms/Bitonic.h"
+#include "algorithms/Bucket.h"
+#include "algorithms/Selection.h"
+#include "algorithms/Radix.h"
+#include "algorithms/Stalin.h"
+#include "algorithms/PSRS.h"
+#include "algorithms/Sleep.h"
+#include "algorithms/Tim.h"
+#include "algorithms/Smooth.h"
 
 
-int function_link(std::vector<int> &data, const std::string &name) {
+void function_link(std::vector<int> &data, const std::string &name) {
     if (name == "Bubble") {
         bubbleSort(data);
     } else if (name == "Gnome") {
@@ -30,29 +38,39 @@ int function_link(std::vector<int> &data, const std::string &name) {
         cocktailSort(data);
     } else if (name == "Quick") {
         std::sort(data.begin(), data.end());
-        // quickSort(data);
     } else if (name == "Merge") {
-        std::sort(data.begin(), data.end());
-        // mergeSort(data);
+        mergeSort(data, 0, data.size());
     } else if (name == "Tree") {
-        std::sort(data.begin(), data.end());
-        // treeSort(data);
+        treeSort(data);
     } else if (name == "Comb") {
         combSort(data);
     } else if (name == "Shell") {
-        std::sort(data.begin(), data.end());
-        // shellSort(data);
+        shellSort(data);
     } else if (name == "Pancake") {
-        std::sort(data.begin(), data.end());
-        // pancakeSort(data);
+        pancakeSort(data);
     } else if (name == "Patience") {
-        patienceSorting(data);
-    } else if (name == "Bitonic") {
         std::sort(data.begin(), data.end());
-        // sort_bitonic_(data);
+        // patienceSorting(data);
+    } else if (name == "Bitonic") {
+        sort_bitonic_(data);
+    } else if (name == "Bucket") {
+        bucketSort(data);
+    } else if (name == "Tim") {
+        timSort(data);
+    } else if (name == "Selection") {
+        selectionSort(data);
+    } else if (name == "Smooth") {
+        smooth_sort(data);
+    } else if (name == "Radix") {
+        radix_sort(&data[0], 0, data.size(), 24);
+    } else if (name == "Stalin") {
+        stalinSort(data);
+    } else if (name == "PSRS") {
+        //psrs_sort(&data[0], data.size());
+        std::sort(data.begin(), data.end()); // похуй гойда
+    } else if (name == "Sleep") {
+        sleepSort(data);
     } else {
-        qWarning((std::string("There is no function called: ") + name).c_str());
-        return -1;
+        qFatal((std::string(">>> FATAL ERROR: There is no function called: ") + name).c_str());
     }
-    return 0;
 }

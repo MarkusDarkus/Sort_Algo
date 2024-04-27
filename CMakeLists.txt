@@ -23,7 +23,7 @@ set(PROJECT_SOURCES
 
 set(ALGO_SOURCES
     algorithms/Insertion.cpp
-    # algorithms/Selection.cpp
+    algorithms/Selection.cpp
     algorithms/Gnome.cpp
     algorithms/Cocktail.cpp
     algorithms/Heap.cpp
@@ -32,22 +32,22 @@ set(ALGO_SOURCES
     algorithms/Tree.cpp
     algorithms/Comb.cpp
     algorithms/Shell.cpp
-    # algorithms/Bucket.cpp
+    algorithms/Bucket.cpp
     algorithms/Pancake.cpp
     algorithms/Bubble.cpp
-    # # algorithms/PSRS.cpp # TODO: implement me
+    algorithms/PSRS.cpp # TODO: implement me
     algorithms/Patience.cpp
-    # algorithms/Smooth.cpp
-    # algorithms/Tim.cpp
-    # # algorithms/Radix.cpp
-    # # algorithms/Sleep.cpp # TODO: implement me
-    # # algorithms/Stalin.cpp # TODO: implement me
+    algorithms/Smooth.cpp
+    algorithms/Tim.cpp
+    algorithms/Radix.cpp
+    algorithms/Sleep.cpp
+    algorithms/Stalin.cpp
     algorithms/Bitonic.cpp
 )
 
 set(ALGO_HEADERS
     algorithms/Insertion.h
-    # algorithms/Selection.h
+    algorithms/Selection.h
     algorithms/Gnome.h
     algorithms/Cocktail.h
     algorithms/Heap.h
@@ -56,16 +56,16 @@ set(ALGO_HEADERS
     algorithms/Tree.h
     algorithms/Comb.h
     algorithms/Shell.h
-    # algorithms/Bucket.h
+    algorithms/Bucket.h
     algorithms/Pancake.h
     algorithms/Bubble.h
-    # # algorithms/PSRS.h # TODO: implement me
+    algorithms/PSRS.h # TODO: implement me
     algorithms/Patience.h
-    # algorithms/Smooth.h
-    # algorithms/Tim.h
-    # algorithms/Radix.h
-    # algorithms/Sleep.h # TODO: implement me
-    # algorithms/Stalin.h # TODO: implement me
+    algorithms/Smooth.h
+    algorithms/Tim.h
+    algorithms/Radix.h
+    algorithms/Sleep.h
+    algorithms/Stalin.h
     algorithms/Bitonic.h
 )
 

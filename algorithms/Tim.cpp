@@ -21,7 +21,7 @@ void insertionSort(std::vector<int>& arr, int left, int right)
 }
 
 
-void merge(std::vector<int>& arr, int l, int m, int r) {
+void merge_tim(std::vector<int>& arr, int l, int m, int r) {
 	int len1 = m - l + 1, len2 = r - m; 
 	int left[len1], right[len2]; 
 	for (int i = 0; i < len1; i++) 
@@ -69,7 +69,7 @@ void timSort(std::vector<int>& arr)
 			int mid = left + size - 1; 
 			int right = std::min((left + 2 * size - 1), (n - 1)); 
 			if (mid < right) 
-				merge(arr, left, mid, right); 
+                merge_tim(arr, left, mid, right);
 		} 
 	} 
 } 

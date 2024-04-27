@@ -14,7 +14,7 @@ int leonardo(int k)
 }
 
 
-void heapify(std::vector<int>& arr, int start, int end)
+void heapify_smooth(std::vector<int>& arr, int start, int end)
 {
 	int i = start;
 	int j = 0;
@@ -58,7 +58,7 @@ std::vector<int> smooth_sort(std::vector<int>& arr)
 	int r = 0;
 	while (p > 0) {
 		if ((r & 0x03) == 0) {
-			heapify(arr, r, q);
+            heapify_smooth(arr, r, q);
 		}
 
 		if (leonardo(r) == p) {
@@ -67,7 +67,7 @@ std::vector<int> smooth_sort(std::vector<int>& arr)
 		else {
 			r = r - 1;
 			q = q - leonardo(r);
-			heapify(arr, r, q);
+            heapify_smooth(arr, r, q);
 			q = r - 1;
 			r = r + 1;
 		}

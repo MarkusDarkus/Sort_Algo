@@ -3,27 +3,35 @@
 Hello Mr Bogdan. We want to represent to you our great work in algorithm science!!!
 ___
 # Содержание
-- [x] 1) [Insertion Sort](#Insertion)
-- [x] 2) [Selection Sort](#Selection)
-- [x] 3) [Bubble Sort](#Bubble)
-- [x] 4) [Gnome Sort](#Gnome)
-- [x] 5) [Cocktail Sort](#Cocktail)
-- [x] 6) [Heap Sort](#Heap)
-- [x] 7) [Quick Sort](#Quick)
-- [x] 8) [Merge Sort](#Merge)
-- [x] 9) [Tree Sort](#Tree)
-- [x] 10) [Comb Sort](#Comb)
-- [x] 11) [Shell Sort](#Shell)
-- [x] 12) [Bucket Sort](#Bucket)
-- [x] 13) [Pancake Sort](#Pancake)
-- [x] 14) [PSRS Sort](#PSRS)
-- [x] 15) [Patience Sort](#Patience)
-- [x] 16) [Smooth Sort](#Smooth)
-- [x] 17) [Tim Sort](#Tim)
-- [x] 18) [Radix Sort](#Radix)
-- [x] 19) [Sleep Sort](#Sleep)
-- [x] 20) [Stalin Sort](#Stalin)
-- [x] 21) [Bitonic Sort](#Bitonic)
+1) [Insertion Sort](#Insertion)
+2) [Selection Sort](#Selection)
+3) [Bubble Sort](#Bubble)
+4) [Gnome Sort](#Gnome)
+5) [Cocktail Sort](#Cocktail)
+6) [Heap Sort](#Heap)
+7) [Quick Sort](#Quick)
+8) [Merge Sort](#Merge)
+9) [Tree Sort](#Tree)
+10) [Comb Sort](#Comb)
+11) [Shell Sort](#Shell)
+12) [Bucket Sort](#Bucket)
+13) [Pancake Sort](#Pancake)
+14) [PSRS Sort](#PSRS)
+15) [Patience Sort](#Patience)
+16) [Smooth Sort](#Smooth)
+17) [Tim Sort](#Tim)
+18) [Radix Sort](#Radix)
+19) [Sleep Sort](#Sleep)
+20) [Stalin Sort](#Stalin)
+21) [Bitonic Sort](#Bitonic)
+
+---
+TODO: \
+мб цвета графикам сделать еще более отличимые друг от друга \
+добавить PSRS \
+починить Patience Sort \
+добавить рандом через random.org \
+сглаживание графика
 
 ---
 ## <a id="Insertion">Insertion Sort</a>

@@ -1,42 +1,67 @@
-#include <algorithm>
 #include <iostream>
-#include <type_traits>
-#include <vector>
+#include <algorithm>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <sys/time.h>
 
-int getMax(std::vector<int>& arr, int n)
-{
-	int mx = arr[0];
-	for (int i = 1; i < n; i++)
-		if (arr[i] > mx)
-			mx = arr[i];
-	return mx;
+void insertion_sort(int *array, int offset, int end) {
+    int x, y, temp;
+    for (x=offset; x<end; ++x) {
+        for (y=x; y>offset && array[y-1]>array[y]; y--) {
+            temp = array[y];
+            array[y] = array[y-1];
+            array[y-1] = temp;
+        }
+    }
 }
 
+void radix_sort(int *array, int offset, int end, int shift) {
+    int x, y, value, temp;
+    int last[256] = { 0 }, pointer[256];
 
-void countSort(std::vector<int>& arr, int n, int exp)
-{
-    // int output[n];
-    // int i, count[10] = { 0 };
-    // for (i = 0; i < n; i++)
-    // 	count[(arr[i] / exp) % 10]++;
-    // for (i = 1; i < 10; i++)
-    // 	count[i] += count[i - 1];
+    for (x=offset; x<end; ++x) {
+        ++last[(array[x] >> shift) & 0xFF];
+    }
 
-    // for (i = n - 1; i >= 0; i--) {
-    // 	output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-    // 	count[(arr[i] / exp) % 10]--;
-    // }
-    // for (i = 0; i < n; i++)
-    // 	arr[i] = output[i];
+    last[0] += offset;
+    pointer[0] = offset;
+    for (x=1; x<256; ++x) {
+        pointer[x] = last[x-1];
+        last[x] += last[x-1];
+    }
 
-    // ЧИНИ КОД БЛЯТЬ
+    for (x=0; x<256; ++x) {
+        while (pointer[x] != last[x]) {
+            value = array[pointer[x]];
+            y = (value >> shift) & 0xFF;
+            while (x != y) {
+                temp = array[pointer[y]];
+                array[pointer[y]++] = value;
+                value = temp;
+                y = (value >> shift) & 0xFF;
+            }
+            array[pointer[x]++] = value;
+        }
+    }
+
+    if (shift > 0) {
+        shift -= 8;
+        for (x=0; x<256; ++x) {
+            temp = x > 0 ? pointer[x] - pointer[x-1] : pointer[0] - offset;
+            if (temp > 64) {
+                radix_sort(array, pointer[x] - temp, pointer[x], shift);
+            } else if (temp > 1) {
+                // std::sort(array + (pointer[x] - temp), array + pointer[x]);
+                insertion_sort(array, pointer[x] - temp, pointer[x]);
+            }
+        }
+    }
 }
 
-
-void radixsort(std::vector<int>& arr, int n)
+int intcmp(const void *aa, const void *bb)
 {
-    // int m = getMax(arr, n);
-    // for (int exp = 1; m / exp > 0; exp *= 10)
-    // 	countSort(arr, n, exp);
+    const int *a = (int *)aa, *b = (int *)bb;
+    return (*a < *b) ? -1 : (*a > *b);
 }
-

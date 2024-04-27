@@ -40,10 +40,8 @@ void merge(std::vector<int> &arr, int left, int middle, int right)
 }
 
 
-void mergeSort(std::vector<int> &arr)
+void mergeSort(std::vector<int> &arr, int left, int right)
 {
-    int left = 0;
-    int right = arr.size() - 1;
     if (left < right) {
         int middle = left + (right - left) / 2;
         mergeSort(arr, left, middle);

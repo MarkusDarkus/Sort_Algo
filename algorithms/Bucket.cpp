@@ -4,10 +4,10 @@
 #include "Bucket.h"
 #include <vector>
 #include <algorithm>
-#include <cmath>  
+#include <cmath>
 
 
-void insertionSort(std::vector<int>& bucket) {
+void insertionSort_for_bucket(std::vector<int>& bucket) {
     for (int i = 1; i < bucket.size(); ++i) {
         int key = bucket[i];
         int j = i - 1;
@@ -28,7 +28,7 @@ void bucketSort(std::vector<int>& arr) {
         buckets[bucketIndex].push_back(arr[i]);
     }  
     for (int i = 0; i < n; ++i) {
-        insertionSort(buckets[i]);
+        insertionSort_for_bucket(buckets[i]);
     }  
     int index = 0;
     for (int i = 0; i < n; ++i) {
