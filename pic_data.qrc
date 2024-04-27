@@ -1,0 +1,6 @@
+<RCC>
+	<qresource prefix="images">
+		<file alias="zhir">Pics/baza1.png</file>
+		<file alias="azino">Pics/azino.jpg</file>
+	</qresource>
+</RCC>

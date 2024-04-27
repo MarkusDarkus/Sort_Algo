@@ -4,6 +4,6 @@
 #include <string>
 #include <vector>
 
-void function_link(std::vector<int> &data, const std::string &name);
+int function_link(std::vector<int> &data, const std::string &name);
 
 #endif // FUNCTION_LINK_H

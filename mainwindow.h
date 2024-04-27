@@ -38,6 +38,8 @@ private slots:
 
     void on_CancelBtn_clicked();
 
+    void resizeEvent(QResizeEvent *event);
+
 private:
     Ui::MainWindow *ui;
 
@@ -48,6 +50,7 @@ private:
 
     std::map<std::string, bool> button_activation_info;
     int disabled_count = 0;
+    bool stop_called = false;
 
     QBrush my_brush;
     QColor clr_gray = QColor("gray");

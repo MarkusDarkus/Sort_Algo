@@ -6,347 +6,426 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>892</width>
-    <height>456</height>
+    <width>1000</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2000</width>
+    <height>1000</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>SORTIROVKOINATOR3000</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="ChoiceTableButtons">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>121</width>
-      <height>361</height>
-     </rect>
+   <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1">
+    <property name="spacing">
+     <number>10</number>
     </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::NoEditTriggers</set>
-    </property>
-    <property name="selectionMode">
-     <enum>QAbstractItemView::NoSelection</enum>
-    </property>
-    <property name="showGrid">
-     <bool>true</bool>
-    </property>
-    <property name="sortingEnabled">
-     <bool>false</bool>
-    </property>
-    <property name="cornerButtonEnabled">
-     <bool>true</bool>
-    </property>
-    <property name="rowCount">
-     <number>21</number>
-    </property>
-    <attribute name="horizontalHeaderVisible">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="horizontalHeaderHighlightSections">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="verticalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <column>
-     <property name="text">
-      <string>Algorithm</string>
-     </property>
-    </column>
-    <item row="0" column="0">
-     <property name="text">
-      <string>Insertion</string>
-     </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="4,9">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <widget class="QTableWidget" name="ChoiceTableButtons">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>125</horstretch>
+            <verstretch>125</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>125</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::NoSelection</enum>
+          </property>
+          <property name="showGrid">
+           <bool>true</bool>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="cornerButtonEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="rowCount">
+           <number>21</number>
+          </property>
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>126</number>
+          </attribute>
+          <attribute name="horizontalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Algorithm</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>Insertion</string>
+           </property>
+          </item>
+          <item row="1" column="0">
+           <property name="text">
+            <string>Selection</string>
+           </property>
+          </item>
+          <item row="2" column="0">
+           <property name="text">
+            <string>Bubble</string>
+           </property>
+          </item>
+          <item row="3" column="0">
+           <property name="text">
+            <string>Gnome</string>
+           </property>
+          </item>
+          <item row="4" column="0">
+           <property name="text">
+            <string>Cocktail</string>
+           </property>
+          </item>
+          <item row="5" column="0">
+           <property name="text">
+            <string>Heap</string>
+           </property>
+          </item>
+          <item row="6" column="0">
+           <property name="text">
+            <string>Quick</string>
+           </property>
+          </item>
+          <item row="7" column="0">
+           <property name="text">
+            <string>Merge</string>
+           </property>
+          </item>
+          <item row="8" column="0">
+           <property name="text">
+            <string>Tree</string>
+           </property>
+          </item>
+          <item row="9" column="0">
+           <property name="text">
+            <string>Comb</string>
+           </property>
+          </item>
+          <item row="10" column="0">
+           <property name="text">
+            <string>Shell</string>
+           </property>
+          </item>
+          <item row="11" column="0">
+           <property name="text">
+            <string>Bucket</string>
+           </property>
+          </item>
+          <item row="12" column="0">
+           <property name="text">
+            <string>Pancake</string>
+           </property>
+          </item>
+          <item row="13" column="0">
+           <property name="text">
+            <string>PSRS</string>
+           </property>
+          </item>
+          <item row="14" column="0">
+           <property name="text">
+            <string>Patience</string>
+           </property>
+          </item>
+          <item row="15" column="0">
+           <property name="text">
+            <string>Smooth</string>
+           </property>
+          </item>
+          <item row="16" column="0">
+           <property name="text">
+            <string>Tim</string>
+           </property>
+          </item>
+          <item row="17" column="0">
+           <property name="text">
+            <string>Radix</string>
+           </property>
+          </item>
+          <item row="18" column="0">
+           <property name="text">
+            <string>Sleep</string>
+           </property>
+          </item>
+          <item row="19" column="0">
+           <property name="text">
+            <string>Stalin</string>
+           </property>
+          </item>
+          <item row="20" column="0">
+           <property name="text">
+            <string>Bitonic</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="SelectBtn">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>125</horstretch>
+            <verstretch>125</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>125</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>(Un)Select all</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Elements amount:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="AmountSpin">
+            <property name="minimum">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <number>10000000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Step:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="StepSpin">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10000000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="BeginBtn">
+            <property name="text">
+             <string>Generate and sort!</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="CancelBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="rofl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>125</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Georgia</family>
+            <italic>true</italic>
+            <bold>false</bold>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="text">
+           <string>Здесь могла бы быть ваша реклама...</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QProgressBar" name="ProgressBar">
+            <property name="maximumSize">
+             <size>
+              <width>325</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ProgressStatus">
+            <property name="maximumSize">
+             <size>
+              <width>325</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>current status: idle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
-    <item row="1" column="0">
-     <property name="text">
-      <string>Selection</string>
-     </property>
+    <item>
+     <widget class="QFrame" name="ChartFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>480</width>
+        <height>480</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalFrame"/>
+     </widget>
     </item>
-    <item row="2" column="0">
-     <property name="text">
-      <string>Bubble</string>
-     </property>
-    </item>
-    <item row="3" column="0">
-     <property name="text">
-      <string>Gnome</string>
-     </property>
-    </item>
-    <item row="4" column="0">
-     <property name="text">
-      <string>Cocktail</string>
-     </property>
-    </item>
-    <item row="5" column="0">
-     <property name="text">
-      <string>Heap</string>
-     </property>
-    </item>
-    <item row="6" column="0">
-     <property name="text">
-      <string>Quick</string>
-     </property>
-    </item>
-    <item row="7" column="0">
-     <property name="text">
-      <string>Merge</string>
-     </property>
-    </item>
-    <item row="8" column="0">
-     <property name="text">
-      <string>Tree</string>
-     </property>
-    </item>
-    <item row="9" column="0">
-     <property name="text">
-      <string>Comb</string>
-     </property>
-    </item>
-    <item row="10" column="0">
-     <property name="text">
-      <string>Shell</string>
-     </property>
-    </item>
-    <item row="11" column="0">
-     <property name="text">
-      <string>Bucket</string>
-     </property>
-    </item>
-    <item row="12" column="0">
-     <property name="text">
-      <string>Pancake</string>
-     </property>
-    </item>
-    <item row="13" column="0">
-     <property name="text">
-      <string>PSRS</string>
-     </property>
-    </item>
-    <item row="14" column="0">
-     <property name="text">
-      <string>Patience</string>
-     </property>
-    </item>
-    <item row="15" column="0">
-     <property name="text">
-      <string>Smooth</string>
-     </property>
-    </item>
-    <item row="16" column="0">
-     <property name="text">
-      <string>Tim</string>
-     </property>
-    </item>
-    <item row="17" column="0">
-     <property name="text">
-      <string>Radix</string>
-     </property>
-    </item>
-    <item row="18" column="0">
-     <property name="text">
-      <string>Sleep</string>
-     </property>
-    </item>
-    <item row="19" column="0">
-     <property name="text">
-      <string>Stalin</string>
-     </property>
-    </item>
-    <item row="20" column="0">
-     <property name="text">
-      <string>Bitonic</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="BeginBtn">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>80</y>
-      <width>141</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Generate and sort!</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="AmountSpin">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>20</y>
-      <width>91</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>5</number>
-    </property>
-    <property name="maximum">
-     <number>10000000</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>20</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Elements amount:</string>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="ProgressBar">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>330</y>
-      <width>241</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ProgressStatus">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>350</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>current status</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="rofl">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>120</y>
-      <width>251</width>
-      <height>191</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>реклама ржака</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="ChartFrame">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>10</y>
-      <width>460</width>
-      <height>380</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalFrame"/>
-   </widget>
-   <widget class="QPushButton" name="CancelBtn">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>80</y>
-      <width>111</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Stop</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SelectBtn">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>380</y>
-      <width>121</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>(Un)Select all</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="StepSpin">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>50</y>
-      <width>91</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>10000000</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>50</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Step:</string>
-    </property>
-   </widget>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>892</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

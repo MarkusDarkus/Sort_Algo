@@ -3,9 +3,22 @@
 #include <iostream>
 #include <map>
 #include <cstdlib>
+#include <random>
 #include <vector>
+#include <string>
 #include <chrono>
 #include "function_link.h"
+#include "Libs/spline.h"
+#include <QResizeEvent>
+#include <QPixmap>
+
+// --------------------!!!----------------------
+// TODO: SMOOTH CURVE???      <-----------------------MARK
+// TODO: parse lightnings
+// FIXME: PSRS CRASH
+// TODO: IMPLEMENT 4 LAST ALGS
+// ----------------optionally-------------------
+// TODO: PROGRESS BAR
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,21 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    /*
-    QLineSeries *series = new QLineSeries();
-    series->setName("bebra");
-    series->append(0, 6);
-    series->append(2, 4);
-    series->append(3, 8);
-    series->append(7, 4);
-    series->append(10, 5);
-    *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
-            << QPointF(20, 2);
-    //chart->legend()->hide();
-    chart->addSeries(series);
-    series->setUseOpenGL(true);
-    */
 
     // создаю чтоб отрисовалась сетка
     QLineSeries *series = new QLineSeries();
@@ -52,6 +50,18 @@ MainWindow::MainWindow(QWidget *parent)
     chart->setAxisX(axisX);
     chart->setAxisY(axisY);
 
+    // реклама бабло все дела
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> get_bool(0,1);
+
+    QString pic_name = "";
+    if (get_bool(rng)) {
+        pic_name = ":/images/zhir";
+    } else {
+        pic_name = ":/images/azino";
+    }
+    ui->rofl->setPixmap(QPixmap(pic_name));
 
     //-------------- init data map
     for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
@@ -107,7 +117,7 @@ void MainWindow::on_BeginBtn_clicked()
 {
     chart->removeAllSeries();
     int max_arr_size = ui->AmountSpin->value();
-    int step = ui->StepSpin->value(); // FIXME: step > amount
+    int step = ui->StepSpin->value(); // FIXME: what if step > amount ???
     std::vector<int> initial_arr;
 
     ui->BeginBtn->setEnabled(false);
@@ -115,37 +125,56 @@ void MainWindow::on_BeginBtn_clicked()
 
     int max_x_val = -1, max_y_val = -1, min_y_val=-1;
 
+    int total_amount = ui->ChoiceTableButtons->rowCount();
+    ui->ProgressBar->setValue(0);
 
-    for (size_t i = 0; i < ui->ChoiceTableButtons->rowCount(); ++i) {
+    for (size_t i = 0; i < total_amount; ++i) {
         if (!button_activation_info[get_str_from_table(i, 0)]) { continue; }
         // too lazy to use threads...
+
+        ui->ProgressStatus->setText((std::string("current status: calculating ") + get_str_from_table(i, 0)).c_str());
+        qApp->processEvents();
 
         QLineSeries *series = new QLineSeries();
         series->setName(QString(get_str_from_table(i, 0).c_str()));
         std::function<void(std::vector<int>)> sort_func;
 
-        for (size_t final_size=step, iteration=1; final_size <= max_arr_size; ++iteration, final_size = step * iteration) {
+        std::vector<double> X, Y;
+
+        for (size_t final_size=step, iteration=1; (final_size <= max_arr_size) && (!stop_called); ++iteration, final_size = step * iteration) {
             initial_arr.reserve(final_size);
-            for (int x = 0; x < final_size; x++){
+            for (int x = 0; (x < final_size) && (!stop_called); x++){
                 initial_arr[x] = rand() % final_size;
             }
 
             auto start = std::chrono::high_resolution_clock::now();
 
-            function_link(initial_arr, get_str_from_table(i, 0));
+            int response = function_link(initial_arr, get_str_from_table(i, 0));
+            if (response == -1) {
+                break;  // func isn't implemented yet
+            }
 
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+
             series->append(final_size, duration.count());
+            // X.push_back(final_size);
+            // Y.push_back(duration.count());
 
             max_x_val = final_size > max_x_val ? final_size : max_x_val;
             max_y_val = duration.count() > max_y_val ? duration.count() : max_y_val;
             if (min_y_val == -1) {min_y_val = duration.count();}
             else {min_y_val = duration.count() < min_y_val ? duration.count() : min_y_val;}
 
-            std::cout << "\t" << final_size << " " << duration.count() << std::endl;
+            // std::cout << "\t" << final_size << " " << duration.count() << std::endl;
             initial_arr.clear();
         }
+        // tk::spline spl(X,Y);
+        // int const_ = 1;
+        // for (int x_point = 0; x_point <= max_arr_size * const_; ++x_point) {
+        //     series->append(x_point / const_, spl(x_point / const_));
+        // }
+
         chart->addSeries(series);
 
         axisX->setRange(0, max_x_val);
@@ -161,37 +190,38 @@ void MainWindow::on_BeginBtn_clicked()
 
         series->attachAxis(axisX);
         series->attachAxis(axisY);
-
         std::cout <<  get_str_from_table(i, 0) << " done!" << std::endl;
         series->setUseOpenGL(true);
+
+        ui->ProgressBar->setValue(int((i + 1) * 1.0 / (total_amount - disabled_count) * 100));
+        qApp->processEvents();
+
     }
 
-
-    // QLineSeries *series = new QLineSeries();
-    // series->setName("bebra");
-    // series->append(0, 6);
-    // series->append(2, 4);
-    // series->append(3, 8);
-    // series->append(7, 4);
-    // series->append(10, 5);
-    // *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
-    //         << QPointF(20, 2);
-    // //chart->legend()->hide();
-    // chart->addSeries(series);
-    // series->setUseOpenGL(true);
-
-    //chart->zoomOut();
     ui->BeginBtn->setEnabled(true);
     ui->CancelBtn->setEnabled(false);
+
+    if (stop_called) {
+        stop_called = false;
+        ui->ProgressBar->setValue(100);
+        ui->ProgressStatus->setText("current status: stopped");
+        chart->removeAllSeries();
+        return;
+    }
+
+    ui->ProgressBar->setValue(100);
+    ui->ProgressStatus->setText("current status: finished!");
+    std::cout <<  "Finished!" << std::endl;
 }
 
 
 void MainWindow::on_CancelBtn_clicked()
 {
-    ui->CancelBtn->setEnabled(false);
-
-    //TODO: emit cancelation
-
-    ui->BeginBtn->setEnabled(true);
+    stop_called = true;
 }
 
+
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    QMainWindow::resizeEvent(event);
+    chartView->resize(ui->ChartFrame->width(), ui->ChartFrame->height());
+}
