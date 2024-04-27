@@ -1,3 +1,5 @@
+#include <Python.h>
+
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <iostream>
@@ -11,6 +13,8 @@
 #include "Libs/spline.h"
 #include <QResizeEvent>
 #include <QPixmap>
+
+// #include "smoothing_function.cpp"
 
 // --------------------!!!----------------------
 // TODO: SMOOTH CURVE???      <-----------------------MARK
@@ -139,7 +143,7 @@ void MainWindow::on_BeginBtn_clicked()
         series->setName(QString(get_str_from_table(i, 0).c_str()));
         std::function<void(std::vector<int>)> sort_func;
 
-        std::vector<double> X, Y;
+        std::vector<int> X, Y;
 
         for (size_t final_size=step, iteration=1; (final_size <= max_arr_size) && (!stop_called); ++iteration, final_size = step * iteration) {
             initial_arr.reserve(final_size);
@@ -154,23 +158,25 @@ void MainWindow::on_BeginBtn_clicked()
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 
-            series->append(final_size, duration.count());
-            // X.push_back(final_size);
-            // Y.push_back(duration.count());
+            // series->append(final_size, duration.count());
+            X.push_back(final_size);
+            Y.push_back(duration.count());
 
             max_x_val = final_size > max_x_val ? final_size : max_x_val;
             max_y_val = duration.count() > max_y_val ? duration.count() : max_y_val;
             if (min_y_val == -1) {min_y_val = duration.count();}
             else {min_y_val = duration.count() < min_y_val ? duration.count() : min_y_val;}
 
-            // std::cout << "\t" << final_size << " " << duration.count() << std::endl;
             initial_arr.clear();
         }
+
         // tk::spline spl(X,Y);
-        // int const_ = 1;
-        // for (int x_point = 0; x_point <= max_arr_size * const_; ++x_point) {
-        //     series->append(x_point / const_, spl(x_point / const_));
-        // }
+
+        smooth_easy_(Y);
+        for (size_t final_size=step, iteration=1; (final_size <= max_arr_size) && (!stop_called); ++iteration, final_size = step * iteration) {
+            series->append(X[iteration - 1], Y[iteration - 1]);
+        }
+
         series->setColor(QColor(colors_list[i].c_str()));
         chart->addSeries(series);
 
@@ -221,4 +227,19 @@ void MainWindow::on_CancelBtn_clicked()
 void MainWindow::resizeEvent(QResizeEvent *event) {
     QMainWindow::resizeEvent(event);
     chartView->resize(ui->ChartFrame->width(), ui->ChartFrame->height());
+}
+//--------------------------
+void smooth_easy_(std::vector<int>& arr){
+    for(int i = 1; i<arr.size(); ++i)
+        arr[i] = (arr[i-1] + arr[i]) / 2;
+}
+
+void smooth_(std::vector<int>& arr){
+    std::vector<int> rhs = arr;
+    int n = arr.size();
+    for(int i = 0; i < n - 2; ++i){
+        int j = (i == n - 1) ? 0 : i + 1;
+        rhs[i] = 4 * arr[i] + 2 * arr[j];
+    }
+    arr = rhs;
 }

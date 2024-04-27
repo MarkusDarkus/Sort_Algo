@@ -82,10 +82,17 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         function_link.h
         function_link.cpp
+        smoothing_function.cpp
 
         Libs/spline.h
         pic_data.qrc
     )
+
+
+find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+target_link_libraries(algosi PRIVATE ${PYTHON_LIBRARIES})
+
 
 find_package(Qt6 REQUIRED COMPONENTS Charts)
 target_link_libraries(algosi PRIVATE Qt6::Charts)

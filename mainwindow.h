@@ -64,4 +64,7 @@ private:
                                         "#f58231", "#ffe119", "#3cb44b", "#42d4f4", "#4363d8", "#911eb4", "#f032e6",
                                         "#fabed4", "#ffd8b1", "#aaffc3", "#dcbeff", "#8F2323", "#BFFF00", "#00EAFF"};
 };
+void smooth_easy_(std::vector<int>& arr);
+
+void smooth_(std::vector<int>& arr);
 #endif // MAINWINDOW_H
